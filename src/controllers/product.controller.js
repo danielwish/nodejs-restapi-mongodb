@@ -12,7 +12,7 @@ export const selectProductById = async (req, res) => {
 
 export const insertProduct = async (req, res) => {
     const { name, category, price, imgURL } = req.body;
-    const newProduct = new product({name, category, price, imgURL});
+    const newProduct = new Product({name, category, price, imgURL});
     const productSave = await newProduct.save();
     res.status(201).json(productSave);
 }
